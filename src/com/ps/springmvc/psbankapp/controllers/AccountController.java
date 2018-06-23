@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ps.springmvc.psbankapp.model.Account;
 
@@ -28,7 +29,8 @@ public class AccountController {
 	}
 
 	@RequestMapping(value = "/saveAccount", method = RequestMethod.POST)
-	public String saveAccount(Model model, HttpServletRequest request) {
+	public String saveAccount(Model model, Account account) {
+		/*
 		String acNo = request.getParameter("accountNo");
 		String customerName = request.getParameter("accountHolderName");
 		String balance = request.getParameter("balance");
@@ -36,11 +38,7 @@ public class AccountController {
 		model.addAttribute("accountNumber", acNo);
 		model.addAttribute("accountHolderName", customerName);
 		model.addAttribute("balance", balance);
-
-		Account account = new Account();
-		account.setAccountNo(Integer.parseInt(acNo));
-		account.setAccountHolderName(customerName);
-		account.setBalance(Double.parseDouble(balance));
+		*/
 
 		model.addAttribute("account", account);
 
